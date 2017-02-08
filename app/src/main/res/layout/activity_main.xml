@@ -13,5 +13,5 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/view"
-        android:background="#faf"/>
+        android:background="#cacaca"/>
 </RelativeLayout>

@@ -5,9 +5,12 @@ package mapview.mailrutest.nitrobubbles.com.mapviewexample.ui.views.mapview
  */
 interface MapViewContract{
     interface View{
-        fun shiftView(x : Int, y :Int)
+        fun shiftTiles(x : Int, y :Int)
+        fun updateTiles()
     }
     interface Presenter{
+        fun viewObtainSizes()
+        fun requestUpdate()
         fun actionDown(x : Int, y :Int)
         fun actionUp(x : Int, y :Int)
         fun actionMove(x : Int, y :Int)

@@ -8,6 +8,7 @@ import com.squareup.picasso.Picasso
 import mapview.mailrutest.nitrobubbles.com.mapviewexample.R
 import mapview.mailrutest.nitrobubbles.com.mapviewexample.core.DEFAULT_LAT
 import mapview.mailrutest.nitrobubbles.com.mapviewexample.core.DEFAULT_LNG
+import mapview.mailrutest.nitrobubbles.com.mapviewexample.core.DEFAULT_ZOOM
 
 /**
  * Created by konstantinaksenov on 08.02.17.
@@ -23,7 +24,7 @@ class TileView : ImageView {
 
     fun setTilePosition(x: Int, y: Int): TileView {
         tileId = Pair(x, y)
-        Picasso.with(context).load("http://b.tile.opencyclemap.org/cycle/16/${DEFAULT_LAT + x}/${DEFAULT_LNG + y}.png").into(this)
+        Picasso.with(context).load("http://b.tile.opencyclemap.org/cycle/${DEFAULT_ZOOM}/${DEFAULT_LAT + x}/${DEFAULT_LNG + y}.png").into(this)
         return this
     }
 

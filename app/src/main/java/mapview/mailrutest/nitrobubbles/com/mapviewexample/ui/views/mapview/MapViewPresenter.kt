@@ -7,13 +7,18 @@ import mapview.mailrutest.nitrobubbles.com.mapviewexample.ui.BasePresenter
  */
 class MapViewPresenter : BasePresenter<MapViewContract.View>(), MapViewContract.Presenter {
     private var pressedStartPosition : Pair<Int, Int>? = null
+    private var needUpdateTiles = false
     override fun actionUp(x: Int, y: Int) {
         pressedStartPosition = null
+        if(needUpdateTiles) {
+            view?.updateTiles()
+            needUpdateTiles = false
+        }
     }
 
     override fun actionMove(x: Int, y: Int) {
         pressedStartPosition?.let {
-            view?.shiftView(x - it.first, y - it.second)
+            view?.shiftTiles(x - it.first, y - it.second)
         }
         pressedStartPosition = Pair(x, y)
     }
@@ -22,5 +27,11 @@ class MapViewPresenter : BasePresenter<MapViewContract.View>(), MapViewContract.
         pressedStartPosition = Pair(x, y)
     }
 
+    override fun viewObtainSizes() {
+        view?.updateTiles()
+    }
 
+    override fun requestUpdate() {
+       needUpdateTiles = true
+    }
 }
