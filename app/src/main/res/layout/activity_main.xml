@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mapview.mailrutest.nitrobubbles.com.mapviewexample.ui.MainActivity">
+
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="mapview.mailrutest.nitrobubbles.com.mapviewexample.ui.views.mapview.MapView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/view"
+        android:background="#faf"/>
+</RelativeLayout>
